@@ -48,7 +48,7 @@ pipeline {
               sshagent(['76501201-7416-49db-af7d-69284a97283a']) {
 	      
 	      
-	      sh 'docker container run -dt --name app1 -p 8081:80 deepakkumarawsdevops/newapp:$BUILD_NUMBER'
+	      sh 'docker container run -dt --name app2 -p 8081:80 deepakkumarawsdevops/newapp:$BUILD_NUMBER'
            }
         }
     }
