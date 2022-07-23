@@ -2,6 +2,12 @@
 pipeline {                                      
     agent any
 
+    environment 
+          {
+          DOCKERHUB_CREDENTIAL= credential ('dockerid')
+	          
+	  }
+
     stages {
 
 
@@ -13,29 +19,13 @@ pipeline {
 	// }
 
 	// }
-        
-
-
-
-
-        stage('Build') {                                  
-            steps {                                                
-			                                                       
-                echo 'Building.'
-                sh 'pwd'
-		
-		
-		
-		
-            }
-        }
-		
+         		
 		
 		
         stage('BuildDockerImage') {
             steps {                                                  
                 echo 'Imageing..'
-		
+		sh 'docker build -t deepakkumarawsdevosp/newapp:$BUILD_NUMBER .'
 		
 		
             }
