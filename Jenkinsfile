@@ -44,9 +44,9 @@ pipeline {
          stage('Deployment') {
             steps {
                 echo 'Deploying....'
-
+              def dockerRun = 'docker run -dt --name app -p 8080:80 deepakkumarawsdevops/newapp:$BUILD_NUMBER'
               sshagent(['76501201-7416-49db-af7d-69284a97283a']) {
-	      def dockerRun = 'docker run -dt --name app -p 8080:80 deepakkumarawsdevops/newapp:$BUILD_NUMBER'
+	      
 	      sh 'ssh -o StrictHostKeyChecking=no ec2-user:18.133.195.231 ${dockerRun}'
 	      //sh 'docker container run -dt -name app -p 8080:80 deepakkumarawsdevops/newapp:$BUILD_NUMBER'
            }
