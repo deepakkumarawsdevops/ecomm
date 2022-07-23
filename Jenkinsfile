@@ -4,7 +4,7 @@ pipeline {
 
     environment 
     {
-     DOCKERHUB_CREDENTIAl = credential('docker-hub-login')
+     DOCKERHUB_CREDENTIAl = credentials('docker-hub-login')
 
     }
 
