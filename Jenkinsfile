@@ -2,11 +2,7 @@
 pipeline {                                      
     agent  { label "docker_node_build"}
 
-    environment 
-          {
-          DOCKERHUB_CREDENTIAL= credential ('dockerid')
-	          
-	  }
+ 
 
     stages {
 
