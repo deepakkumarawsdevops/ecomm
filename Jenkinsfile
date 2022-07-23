@@ -6,14 +6,14 @@ pipeline {
 
 
 
-         stage('SCM Checkout') 
-	 {
-          steps{
-             git 'https://github.com/deepakkumarawsdevops/ecomm.git'
-	  }
+        # stage('SCM Checkout') 
+	# {
+        # steps{
+        #     git 'https://github.com/deepakkumarawsdevops/ecomm.git'
+	# }
 
-	 }
-
+	# }
+        
 
 
 
