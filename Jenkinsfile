@@ -19,7 +19,7 @@ pipeline {
         stage('BuildDockerImage') {
             steps {                                                  
                 echo 'Imageing..'
-		sh 'docker build -t deepakkumarawsdevosp/newapp:$BUILD_NUMBER .'
+		sh 'docker build -t deepakkumarawsdevops/newapp:$BUILD_NUMBER .'
 		
 		
             }
