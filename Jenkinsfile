@@ -12,13 +12,7 @@ pipeline {
 
 
 
-        // stage('SCM Checkout') 
-	// {
-        //steps{
-        //    git 'https://github.com/deepakkumarawsdevops/ecomm.git'
-	// }
-
-	// }
+     
          		
 		
 		
