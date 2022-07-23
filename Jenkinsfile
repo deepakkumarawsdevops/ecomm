@@ -4,7 +4,7 @@ pipeline {
 
     environment 
     {
-     DOCKERHUB_CREDENTIAl = credentials('docker-hub-login')
+     DOCKERHUB_CREDENTIALS = credentials('docker-hub-login')
 
     }
 
@@ -36,7 +36,7 @@ pipeline {
 
 	{
          steps{
-           sh 'echo $DOCKERHUB_CREDENTIAl_psw | docker login -u $DOCKERHUB_CREDENTIAl_usr --password-stdin'
+           sh 'echo $DOCKERHUB_CREDENTIALS_PWD | docker login -u $DOCKERHUB_CREDENTIAl_USR --password-stdin'
           	  
 	  }
 
