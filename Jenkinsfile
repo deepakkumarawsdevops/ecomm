@@ -10,14 +10,9 @@ pipeline {
 
 
     stages {
+	
 
-
-
-     
-         		
-		
-		
-        stage('BuildDockerImage') {
+           stage('BuildDockerImage') {
             steps {                                                  
                 echo 'Imageing..'
 		sh 'docker build -t deepakkumarawsdevops/newapp:$BUILD_NUMBER .'
@@ -25,13 +20,7 @@ pipeline {
 		
             }
         }
-        stage('ReleaseToDockerHub') {                                           
-            steps {
-                echo 'Releasing....'
-		
-
-            }
-        }
+        
 	stage('LogintoDockerHub')
 
 	{
@@ -43,18 +32,22 @@ pipeline {
 
 
 	} 
-	stage('Deploy'){
+	stage('ReleaseToDockerHub'){
 
           steps {
-             echo 'Deploying...'
+             echo 'Releasing...'
 	     sh 'docker push deepakkumarawsdevops/newapp:$BUILD_NUMBER'
+                 
+              }
+
+            }
+         stage('Deployment') {
+            steps {
+                echo 'Deploying....'
 
 
-	       
-	              }
-
-
-	            }
+            }
+        }
 
     }                                           
 
